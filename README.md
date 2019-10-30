@@ -1,4 +1,4 @@
-# Razzle With Docker Nginx Example
+# Face detection using opencv and react
 
 ## How to use
 Download the example [or clone it](https://github.com/fivethreeo/react-opencv.git):
