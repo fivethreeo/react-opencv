@@ -9,6 +9,9 @@ module.exports = {
 };
 EOF
 
+# on dev docker 
+sudo docker network create -d bridge --subnet 10.0.0.0/24 --gateway 10.0.0.1 dockernet
+
 export PUBLIC_PATH=https://opencv.hongri.no/
 export CLIENT_PUBLIC_PATH=https://opencv.hongri.no/webpack/
 export VIRTUAL_HOST=opencv.hongri.no
@@ -147,9 +150,6 @@ EOF
 docker volume create ${CERTS_VOLUME}
 docker volume create ${VHOST_D_VOLUME}
 docker volume create ${HTML_VOLUME}
-
-# on dev docker 
-sudo docker network create -d bridge --subnet 10.0.0.0/24 --gateway 10.0.0.1 dockernet
 
 
 # on prod docker
