@@ -62,6 +62,7 @@ services:
       - dockernet
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${VIRTUAL_HOST}
 
 networks:
   dockernet:
@@ -69,8 +70,10 @@ networks:
 
 EOF
 
-sudo docker-compose -f docker-compose.yml up
+# switch to new teminal
+sudo -E docker-compose -f docker-compose.yml up
 
+# switch back to original terminal
 yarn start
 
 export PUBLIC_PATH=https://opencv.hongri.no/ 
