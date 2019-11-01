@@ -25,8 +25,8 @@ function updateFps() {
 import React from 'react';
 
 const FramesOverlay = ({ faces, scale }) => {
-  return (<div className="framesOverlay">{ faces.map(face=>
-    <div className="faceRect" style={{
+  return (<div className="framesOverlay">{ faces.map((face, index)=>
+    <div key={index} className="faceRect" style={{
       top: face.y / scale,
       left: face.x / scale,
       width: face.width / scale,
